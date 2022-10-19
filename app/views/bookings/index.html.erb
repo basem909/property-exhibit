@@ -6,9 +6,9 @@
   <% @bookings.each do |booking| %>
     <%= render booking %>
     <p>
-      <%= link_to "Show this booking", booking %>
+      <%= link_to "Show this booking", property_booking_path(id: booking.id) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New booking", new_booking_path %>
+<%= link_to "New booking", new_property_booking_path %>

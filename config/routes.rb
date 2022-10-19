@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :bookings
-  # devise_for :users
+  devise_for :users
+  
   root 'properties#index'
-  resources :properties
+  resources :properties do 
+    resources :bookings
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

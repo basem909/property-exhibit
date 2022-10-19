@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /bookings or /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   # GET /bookings/1 or /bookings/1.json
@@ -21,11 +22,12 @@ class BookingsController < ApplicationController
 
   # POST /bookings or /bookings.json
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(check_in: params[:check_in], check_out: params[:check_out], property_id: params[:property_id])
+    @booking.user_id = current_user.id
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
+        format.html { redirect_to property_bookings_path, notice: "Booking was successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +67,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.fetch(:booking, {})
+     params.require(:booking).permit(:check_in, :check_out, :property_id)
     end
 end
