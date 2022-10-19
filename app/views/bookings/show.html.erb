@@ -1,10 +1,30 @@
 <p style="color: green"><%= notice %></p>
+<div>
 
-<%= render @booking %>
+<p>
+<label>check-in date: </label><%=
+@booking.check_in %> at 1:00pm
+</p>
+<p>
+<label>check-out date: </label><%=
+@booking.check_out %> at 12:00pm
+</p>
+</div>
+
+<p>
+<label>property: </label><%=
+Property.find_by(id:@booking.property_id).name %> located at <%= Property.find_by(id:@booking.property_id).adress %>
+</p>
+</div>
+
+<p>
+<label>Any further info or notices will be directed to: </label><%=
+User.find_by(id: current_user.id).email %>
+</p>
+</div>
 
 <div>
-  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
-  <%= link_to "Back to bookings", bookings_path %>
+  <%= link_to "Back to bookings", property_bookings_path %>
 
-  <%= button_to "Destroy this booking", @booking, method: :delete %>
+  <%= button_to "Destroy this booking", property_booking_url(id: @booking.id), method: :delete %>
 </div>

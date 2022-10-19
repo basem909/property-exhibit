@@ -21,11 +21,6 @@
   </div>
 
   <div>
-    <%= form.label :property, style: "display: block" %>
-    <p><%= Property.find_by(id: params[:property_id]).name %></p>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>

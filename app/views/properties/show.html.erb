@@ -5,6 +5,7 @@
 <div>
   <%= link_to "Edit this property", edit_property_path(@property) %> |
   <%= link_to "Back to properties", properties_path %>
+  <%= link_to "Book this proprety", new_property_booking_path(@property.id) %>
 
   <%= button_to "Destroy this property", @property, method: :delete %>
 </div>
