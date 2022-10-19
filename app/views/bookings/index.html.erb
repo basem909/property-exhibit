@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<div id="bookings">
+  <% @bookings.each do |booking| %>
+    <%= render booking %>
+    <p>
+      <%= link_to "Show this booking", property_booking_path(id: booking.id) %>
+    </p>
+  <% end %>
+</div>
+<div>
+<%= link_to "New booking", new_property_booking_path %>
+<%= link_to "Back to properties", properties_path %>
+</div>
