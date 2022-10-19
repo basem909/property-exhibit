@@ -35,7 +35,12 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1 or /properties/1.json
   def update
     respond_to do |format|
-      if @property.update(property_params)
+      if @property.update(property_params) 
+      #   if params[:property][:photos].present?
+      #   params[:property][:photos].each do |photo|
+      #   @property.photos.attach(photo)
+      # end
+      # end
         format.html { redirect_to property_url(@property), notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else
