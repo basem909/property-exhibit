@@ -1,11 +1,19 @@
 <div id="<%= dom_id property %>" class='h-max' >
   <div class="">
-    <div class="w-full h-max overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide flex h-auto w-full rounded-xl ">
+  <% if @cover %>
+    <div class=''> <%= image_tag(@cover,class: "object-content w-full max-h-[60vh] " ) %> </div>
+    <% else %>
+    <div class="w-full h-max overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide flex h-80 w-full rounded-xl ">
     <% property.photos.each do |photo| %>
-    <%= image_tag(photo,class: "object-cover w-full h-48 " ) %> 
+    <%= image_tag(photo,class: "object-cover w-full h-[100%] " ) %> 
     <% end %>
+     <% end %>
     </div>
+    <% if @cover %>
+    <article class=" pl-10 md:pl-32 flex flex-col  py-[10vw] gap-5 h-full min-h-[120px]">
+    <% else %>
     <article class="flex flex-col justify-between py-3 h-full min-h-[120px]">
+    <% end %>
     <p class="leading-normal text-gray-500 text-sm">
     <%= property.description %></p>
     <h4 class="mb-3 text-xl font-bold tracking-tight text-gray-800 mb-0"><%= property.name %></h4>

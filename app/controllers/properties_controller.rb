@@ -7,7 +7,10 @@ class PropertiesController < ApplicationController
   end
 
   # GET /properties/1 or /properties/1.json
-  def show; end
+  def show
+    @cover = @property.photos[2]
+
+  end
 
   # GET /properties/new
   def new
