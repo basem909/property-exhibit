@@ -1,23 +1,16 @@
-<div id="<%= dom_id property %>">
-  <p>
-    <strong>Name:</strong>
-    <%= property.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= property.description %>
-  </p>
-
-  <p>
-    <strong>Adress:</strong>
-    <%= property.adress %>
-  </p>
-
-  <% property.photos.each do |photo| %>
-    <div style='width: 300px; height: 300px;'>
-    <%= image_tag(photo, style:' width: 100%; height: auto;') %>
+<div id="<%= dom_id property %>" class='h-max' >
+  <div class="">
+    <div class="w-full h-max overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide flex h-auto w-full rounded-xl ">
+    <% property.photos.each do |photo| %>
+    <%= image_tag(photo,class: "object-cover w-full h-48 " ) %> 
+    <% end %>
     </div>
-  <% end %>
-
+    <article class="flex flex-col justify-between py-3 h-full min-h-[120px]">
+    <p class="leading-normal text-gray-500 text-sm">
+    <%= property.description %></p>
+    <h4 class="mb-3 text-xl font-bold tracking-tight text-gray-800 mb-0"><%= property.name %></h4>
+    <p class="leading-normal text-gray-500 text-sm">
+    <%= property.adress %></p>
+    </article>
+  </div>
 </div>

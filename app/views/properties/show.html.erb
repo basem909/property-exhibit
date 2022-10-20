@@ -1,11 +1,20 @@
 <p style="color: green"><%= notice %></p>
-
+<div class='h-[70px]'></div>
 <%= render @property %>
 
 <div>
-  <%= link_to "Edit this property", edit_property_path(@property) %> |
-  <%= link_to "Back to properties", properties_path %>
-  <%= link_to "Book this proprety", new_property_booking_path(@property.id) %>
+<div class=' flex justify-around'>
+ <button class="w-[10] h-12 px-6 text-gray-700 border-solid border-[2px] border-gray-600  transition-colors duration-150 bg-white rounded-full focus:shadow-outline focus:bg-black focus:text-white hover:bg-gray-100 cursor-pointer">
+
+  <%= link_to "Edit this property", edit_property_path(@property) %> </button>
+   <button class="w-[10] h-12 px-6 text-gray-700 border-solid border-[2px] border-gray-600  transition-colors duration-150 bg-white rounded-full focus:shadow-outline focus:bg-black text-white hover:bg-gray-100 cursor-pointer">
+
+  <%= link_to "Back to properties", properties_path %></button>
+   <button class="w-[10] h-12 px-6 text-gray-700 border-solid border-[2px] border-gray-600  transition-colors duration-150 bg-white rounded-full focus:shadow-outline focus:bg-black text-white hover:bg-gray-100 cursor-pointer">
+
+  <%= link_to "Book this proprety", new_property_booking_path(@property.id) %></button>
+  </div>
 
   <%= button_to "Destroy this property", @property, method: :delete %>
+  </button>
 </div>
