@@ -9,11 +9,13 @@ class Ability
     can :update, Property, user: user
     can :create, Property, user: user
 
+    can :create, Booking, user: user
+    can :delete, Booking, user: user
+
     return unless user.admin? # additional permissions for administrators
 
     can :delete, Property
     can :update, Property
     can :create, Property
-    can :delete, Comment
   end
 end

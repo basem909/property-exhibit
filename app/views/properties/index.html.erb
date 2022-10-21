@@ -25,7 +25,8 @@
   <button
     class="font-bold text-center self-center underline underline-offset-8 pb-5"
   >
-    <%= link_to "Add a new property", new_property_path %>
+  <!-- only user can add a new property -->
+    <%= link_to "Add a new property", new_property_path if can? :create, Property %>
   </button>
   <% else %>
   <h5 class="text-center">

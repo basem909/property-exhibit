@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def is?( requested_role )
     self.role == requested_role.to_s
   end
+
+  def admin?
+    is?('admin')
+  end
 end
