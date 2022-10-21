@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :properties, through: :bookings
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true 
   validates :password, presence: true
 
-  ROLES = %i[admin user].freeze
+  # ROLES = ["admin", "user"]
   def is?(requested_role)
     role == requested_role.to_s
   end

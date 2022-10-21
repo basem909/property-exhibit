@@ -9,6 +9,10 @@ gem 'cancancan', '~> 1.9'
 gem 'devise'
 gem 'rails', '~> 7.0.4'
 gem 'rubocop'
+gem 'rails-controller-testing'
+gem 'webdrivers'
+gem 'factory_girl', '~> 4.9'
+gem "factory_girl_rails", "~> 4.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
