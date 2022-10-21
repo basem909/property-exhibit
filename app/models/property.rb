@@ -5,6 +5,6 @@ class Property < ApplicationRecord
 
   validates :name, presence: true, length: { in: 6..128 }
   validates :description, presence: true
-  validates :adress, presence: true
+  validates :address, presence: true
   validates :photos, presence: true, length: { in: 3..5, message: ' min 3 and max 5 for property' }
 end
