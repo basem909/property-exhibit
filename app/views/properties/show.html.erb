@@ -41,14 +41,14 @@
 </div>
 <!-- a visitor can not edit, delete a property, nor create a booking without sign-in -->
 <div class=' flex flex-col md:flex-row gap-4 justify-center p-5'>
-  <button class='h-12 underline underline-offset-8 text-sm  px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
+  <button class='back h-12 underline underline-offset-8 text-sm  px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
     <%= link_to "Back to properties ",properties_path %>
   </button>
   <button class='h-12 underline underline-offset-8 text-sm  px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
     <%= link_to "Edit this property", edit_property_path(@property) if can? :update, Property %>
   </button>
-  <button class='h-12 underline underline-offset-8 text-sm  px-[] m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
-    <%= link_to "Book this proprety", new_property_booking_path(@property.id) if can? :create, Booking %>
+  <button class='book h-12 underline underline-offset-8 text-sm  px-[] m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
+    <%= link_to "Book this property", new_property_booking_path(@property.id) if can? :create, Booking %>
   </button>
   <% if can? :delete, Property %>
   <%= button_to "Delete this property", @property, method: :delete, class: 'text-sm h-12 underline underline-offset-8 px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:bg-red-400' %>

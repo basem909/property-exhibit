@@ -8,7 +8,9 @@ gem 'activestorage'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
 gem 'rails', '~> 7.0.4'
+gem 'rails-controller-testing'
 gem 'rubocop'
+gem 'webdrivers'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -54,7 +56,9 @@ gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -72,7 +76,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
