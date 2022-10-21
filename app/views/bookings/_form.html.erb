@@ -1,26 +1,35 @@
-<%= form_with :url => "/properties/#{params[:property_id]}/bookings", :method => :post do |form| %>
-  <% if booking.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+<%= form_with :url => "/properties/#{params[:property_id]}/bookings",:html =>
+{:class =>'bg-white w-[300px] md:w-[500px] lg:w-[700px] min-h-[400px] p-5
+rounded-xl flex flex-col justify-center gap-4'}, :method => :post do |form| %>
+<% if booking.errors.any? %>
+<div style="color: red">
+  <h2>
+    <%= pluralize(booking.errors.count, "error") %> prohibited this booking from
+    being saved:
+  </h2>
 
-      <ul>
-        <% booking.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% booking.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <div>
-    <%= form.label :check_in, style: "display: block" %>
-    <%= form.date_field :check_in %>
-  </div>
+  <%= form.label :check_in, style: "display: block", class: "text-sm
+  text-gray-600" %> <%= form.date_field :check_in, class: "w-full h-10 px-3 mb-2
+  text-base text-gray-700 placeholder-gray-600 border rounded-lg
+  focus:shadow-outline" %>
+</div>
 
-  <div>
-    <%= form.label :check_out, style: "display: block" %>
-    <%= form.date_field :check_out %>
-  </div>
+<div>
+  <%= form.label :check_out, style: "display: block", class: "text-sm
+  text-gray-600" %> <%= form.date_field :check_out, class: "w-full h-10 px-3 mb-2
+  text-base text-gray-700 placeholder-gray-600 border rounded-lg
+  focus:shadow-outline" %>
+</div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div><%= form.submit  class: "w-full h-12 px-6 text-white
+  transition-colors duration-150 bg-black rounded-lg focus:shadow-outline
+  hover:bg-gray-800 cursor-pointer" %></div>
 <% end %>
