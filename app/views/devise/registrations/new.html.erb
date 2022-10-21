@@ -1,34 +1,50 @@
-<div class='flex flex-col justify-center items-center bg-gray-100 gap-3 h-screen'>
-<div class='flex flex-col justify-center items-center pt-32 bg-gray-100 '>
-  
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class =>'bg-white  w-[300px] md:w-[600px] lg:w-[800px] h-[450px] p-5 rounded-xl flex flex-col justify-center gap-4'}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <h2 class='mb-3 text-2xl font-bold tracking-tight text-gray-800 text-center'>Sign up</h2>
+<div
+  class="flex flex-col justify-center items-center bg-gray-100 gap-3 h-screen"
+>
+  <div class="flex flex-col justify-center items-center pt-32 bg-gray-100">
+    <%= form_for(resource, as: resource_name, url:
+    registration_path(resource_name), :html => {:class =>'bg-white w-[450px]
+    h-[450px] p-5 rounded-xl flex flex-col justify-center gap-4'}) do |f| %> <%=
+    render "devise/shared/error_messages", resource: resource %>
+    <h2
+      class="mb-3 text-2xl font-bold tracking-tight text-gray-800 text-center"
+    >
+      Sign up
+    </h2>
 
-  <div class="field">
-    <%= f.label :email, class: "text-sm text-gray-600" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" %>
-  </div>
+    <div class="field">
+      <%= f.label :email, class: "text-sm text-gray-600" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:
+      "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border
+      rounded-lg focus:shadow-outline" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, class: "text-sm text-gray-600" %>
-    <% if @minimum_password_length %>
-    <em class="text-sm text-gray-600">(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" %>
-  </div>
+    <div class="field">
+      <%= f.label :password, class: "text-sm text-gray-600" %> <% if
+      @minimum_password_length %>
+      <em class="text-sm text-gray-600"
+        >(<%= @minimum_password_length %> characters minimum)</em
+      >
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:
+      "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border
+      rounded-lg focus:shadow-outline" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, class: "text-sm text-gray-600" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "text-sm text-gray-600" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",
+      class: "w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600
+      border rounded-lg focus:shadow-outline" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up", class: "w-full h-12 px-6 text-white transition-colors duration-150 bg-black rounded-lg focus:shadow-outline hover:bg-gray-800 cursor-pointer" %>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "w-full h-12 px-6 text-white
+      transition-colors duration-150 bg-black rounded-lg focus:shadow-outline
+      hover:bg-gray-800 cursor-pointer" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-<label class='font-medium'>Have an account already?</label>
-<button class='font-extrabold'>
-<%= render "devise/shared/links" %></button>
+  <label class="font-medium">Have an account already?</label>
+  <button class="font-extrabold"><%= render "devise/shared/links" %></button>
 </div>
