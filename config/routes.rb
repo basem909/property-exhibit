@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'properties#index'
+  get '/my_bookings', to: 'bookings#index'
+
   resources :properties do 
     resources :bookings
   end

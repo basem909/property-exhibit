@@ -1,2 +1,14 @@
-<div id="<%= dom_id booking %>">
+<div id="<%= dom_id booking %>" class="h-max">
+  <div>
+    <% cover = Property.find_by(id: booking.property_id).photos[2] %>
+    <div><%= image_tag(cover,class: "object-content xl:object-cover w-full h-56 rounded-md" ) %></div>
+    <article class="flex flex-col justify-center py-3 pl-3 h-full min-h-[120px]">
+      <h4 class="mb-3 text-xl font-bold tracking-tight text-gray-800 mb-0">
+        From: <%= booking.check_in %> at 1PM
+      </h4>
+      <h4 class="mb-3 text-xl font-bold tracking-tight text-gray-800 mb-0">
+        To: <%= booking.check_out %> at 12PM
+      </h4>
+    </article>
+  </div>
 </div>
