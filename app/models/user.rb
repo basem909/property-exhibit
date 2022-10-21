@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :properties, through: :bookings
 
-  validates :email, presence: true 
+  validates :email, presence: true
   validates :password, presence: true
 
   # ROLES = ["admin", "user"]

@@ -33,7 +33,7 @@ RSpec.describe 'Users Controller', type: :request do
 
   context 'Post invaild email' do
     let(:user) { create(email: 'user@example.com') }
-    
+
     it 'Check if a correct template was rendered.' do
       post '/users/sign_in'
       expect(response).to render_template(:new)

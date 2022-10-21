@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Property, type: :model do
-  subject { Property.new(name: 'A modern house by the lake',description: ' avery nice house with a lake view and sunny mornings', address: "123 New St, new city")}
+  subject do
+    Property.new(name: 'A modern house by the lake',
+                 description: ' avery nice house with a lake view and sunny mornings',
+                 address: '123 New St, new city')
+  end
   before { subject.save }
 
   it 'name should not be nill' do
@@ -28,5 +32,4 @@ RSpec.describe Property, type: :model do
     subject.name = 'flat'
     expect(subject).to_not be_valid
   end
-
 end
