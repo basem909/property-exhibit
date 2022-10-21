@@ -1,37 +1,52 @@
-<%= form_with(model: property) do |form| %>
-  <% if property.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+<%= form_with(model: property, :html => {:class =>'bg-white w-[300px]
+md:w-[600px] lg:w-[800px] min-h-[450px] p-5 rounded-xl flex flex-col
+justify-center gap-4'}) do |form| %> <% if property.errors.any? %>
+<div
+  class="flex flex-col justify-center items-center bg-red-100 rounded-lg text-red-800"
+>
+  <h2>
+    <%= pluralize(property.errors.count, "error") %> prohibited this property
+    from being saved:
+  </h2>
 
-      <ul>
-        <% property.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% property.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+<div>
+  <%= form.label :name, style: "display: block", class: "text-sm text-gray-600"
+  %> <%= form.text_field :name, class: "w-full h-10 px-3 mb-2 text-base
+  text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" %>
+</div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+<div>
+  <%= form.label :description, style: "display: block", class: "text-sm
+  text-gray-600" %> <%= form.text_area :description, class: "w-full h-10 px-3
+  mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg
+  focus:shadow-outline" %>
+</div>
 
-  <div>
-    <%= form.label :adress, style: "display: block" %>
-    <%= form.text_field :adress %>
-  </div>
+<div>
+  <%= form.label :adress, style: "display: block", class: "text-sm
+  text-gray-600" %> <%= form.text_area :adress, class: "w-full h-10 px-3 mb-2
+  text-base text-gray-700 placeholder-gray-600 border rounded-lg
+  focus:shadow-outline" %>
+</div>
 
-  <div>
-    <%= form.label :photos, style: "display: block" %>
-    <%= form.file_field :photos, multiple: true %>
-  </div>
+<div>
+  <%= form.label :photos, style: "display: block", class: "text-sm
+  text-gray-600" %> <%= form.file_field :photos, class: "w-full h-10 px-3 mb-2
+  text-base text-gray-700 placeholder-gray-600 border rounded-lg
+  focus:shadow-outline p-1", multiple: true %>
+</div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div>
+  <%= form.submit  class: "w-full h-12 px-6 text-white
+  transition-colors duration-150 bg-black rounded-lg focus:shadow-outline
+  hover:bg-gray-800 cursor-pointer" %>
+</div>
 <% end %>

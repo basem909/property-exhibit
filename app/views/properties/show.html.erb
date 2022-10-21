@@ -1,11 +1,56 @@
 <p style="color: green"><%= notice %></p>
-
+<div class='h-[70px] w-full'></div>
 <%= render @property %>
-
-<div>
-  <%= link_to "Edit this property", edit_property_path(@property) %> |
-  <%= link_to "Back to properties", properties_path %>
-  <%= link_to "Book this proprety", new_property_booking_path(@property.id) %>
-
-  <%= button_to "Destroy this property", @property, method: :delete %>
+<div class="info pl-10 md:pl-32 flex flex-col gap-5">
+<span>
+    <h5 class="text-lg font-semibold">We offer</h5>
+    <ul class="list-disc px-7">
+      <li> Free cancellation on nearly all units.</li>
+      <li> Clear pricing with no hidden fees.</li>
+      <li> Book properties on the move.</li>
+      <li> Your loyalty rewarded with freebies, perks and discounts.</li>
+      <li> Price match guarantee.</li>
+      <li> Wide range of choices different level properties.</li>
+  </ul>
+  </span>
+  <span>
+    <h5 class="text-lg font-semibold">General Rules & Regulations</h5>
+    <ul class="list-disc px-7">
+      <li> Check-in at 14.00 hrs. and Check-out 11.00 hrs.</li>
+      <li> Exceeding check-out time, during 13.00 – 16.00 hrs., will result in extra charge at 50% of room rate.</li>
+      <li> Full night charge of an extra night shall be applied to the check-out done later than 16.00 hrs.</li>
+      <li>The rooms, lobby or common areas of the residence may not be used for any business purposes, or for any purpose apart from accommodation, without the express permission of the residence.</li>
+      <li>Please do not hang any items or objects whatsoever from the windows of your guest room.</li>
+      <li>The residence allocates space to offer guests the convenient parking; but does not cover any costs
+          associated with any damages or missing property occurring to the vehicle.
+      </li>
+    </ul>
+  </span>
+  <span>
+    <h5 class="text-lg font-semibold">Safety & Security Rules & Regulations</h5>
+    <p class="font-semibold pl-2">Please do not bring onto the premises of the residence any of the following:</p>
+    <ul class="list-disc px-8">
+      <li> Animals or birds of any kind, except service animals.</li>
+      <li> Gunpowder, oils or other explosives or inflammables.</li>
+      <li> Objects emitting a foul odor.</li>
+      <li> Unregistered firearms or swords.</li>
+      <li>Objects of an unusually large size or in unusually large quantities</li>
+      <li>Illegal drugs or other articles, the possession of which is prohibited by the law.</li>
+  </ul>
+  </span>
 </div>
+<div class=' flex flex-col md:flex-row gap-4 justify-center p-5'>
+  <button class='h-12 underline underline-offset-8 text-sm  px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
+    <%= link_to "Back to properties ",properties_path %>
+  </button>
+  <button class='h-12 underline underline-offset-8 text-sm  px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
+    <%= link_to "Edit this property", edit_property_path(@property) %>
+  </button>
+  <button class='h-12 underline underline-offset-8 text-sm  px-[] m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:text-[1.5vw]'>
+    <%= link_to "Book this proprety", new_property_booking_path(@property.id) %>
+  </button>
+  <%= button_to "Destroy this property", @property, method: :delete, class: 'text-sm h-12 underline underline-offset-8 px-5 m-2 border-solid border-[1px]  text-gray-800 transition-colors duration-150  rounded-lg focus:shadow-outline hover:bg-red-400' %>
+</div>
+
+  
+
