@@ -1,6 +1,6 @@
-# fly.toml file generated for apartrent22 on 2022-10-21T21:57:43-03:00
+# fly.toml file generated for apartrent25 on 2022-10-22T00:28:20-03:00
 
-app = "apartrent22"
+app = "apartrent25"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
