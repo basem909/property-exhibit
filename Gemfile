@@ -5,13 +5,13 @@ ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'activestorage'
+gem 'bullet'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
 gem 'rails', '~> 7.0.4'
 gem 'rails-controller-testing'
 gem 'rubocop'
 gem 'webdrivers'
-gem 'bullet'
 gem 'xmpp4r'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
