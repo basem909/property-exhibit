@@ -83,9 +83,9 @@ https://github.com/basem909/property-exhibit/projects/1
 
 👤 Bassem Shams
 
-GitHub: @basem909
-Twitter: @ShamsBassem
-LinkedIn: Bassem Abdelrahman
+- GitHub: @basem909
+- Twitter: @ShamsBassem
+- LinkedIn: Bassem Abdelrahman
 
 ## 🤝 Contributing
 
