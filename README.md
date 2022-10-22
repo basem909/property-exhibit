@@ -70,9 +70,11 @@ Windows users have to specify ruby in this case:
 ```
 ruby bin/rspec
 ```
+## Documentation
+[Apartrent22 exhibit](https://www.loom.com/share/164d45c755d143d4b3614026f9232753)
 
 ## Live Demo
-[property exhibition](https://apartrent25.fly.dev/)
+[property exhibition](https://apartrent23.fly.dev/)
 
 ## Authors
 
