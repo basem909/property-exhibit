@@ -3,7 +3,7 @@
 
 
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class =>'bg-white w-[300px] md:w-[600px] lg:w-[800px] h-[400px] p-5 rounded-xl flex flex-col justify-center gap-5'}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class =>'bg-white w-[450px] h-[400px] p-5 rounded-xl flex flex-col justify-center gap-5'}) do |f| %>
   <h2 class='mb-3 text-2xl font-bold tracking-tight text-gray-800 text-center'>Log in</h2>
   <div class="field">
     <%= f.label :email, class: "text-sm text-gray-600" %><br />
@@ -26,7 +26,7 @@
     <%= f.submit "Log in", class: "w-full h-12 px-6 text-white transition-colors duration-150 bg-black rounded-full focus:shadow-outline hover:bg-gray-800 cursor-pointer" %>
   </div>
 <% end %>
-<button class='font-bold'>
+<button class='font-extrabold'>
 <%= render "devise/shared/links" %></button>
 
 </div>

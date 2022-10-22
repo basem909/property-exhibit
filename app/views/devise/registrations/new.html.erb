@@ -3,8 +3,7 @@
 >
   <div class="flex flex-col justify-center items-center pt-32 bg-gray-100">
     <%= form_for(resource, as: resource_name, url:
-    registration_path(resource_name), :html => {:class =>'bg-white w-[450px]
-    h-[450px] p-5 rounded-xl flex flex-col justify-center gap-4'}) do |f| %> <%=
+    registration_path(resource_name), :html => {:class =>'bg-white p-5 w-[300px] md:w-[600px] lg:w-[800px] h-[450px]  rounded-xl flex flex-col justify-center gap-5'}) do |f| %> <%=
     render "devise/shared/error_messages", resource: resource %>
     <h2
       class="mb-3 text-2xl font-bold tracking-tight text-gray-800 text-center"
