@@ -17,11 +17,20 @@ class PropertiesController < ApplicationController
   end
 
   # GET /properties/1/edit
-  def edit; end
+  def edit
+    @user = current_user
+      unless @property.user_id == @user.id
+        respond_to do |format|
+          format.html { redirect_to properties_url, notice: 'Only the property owner can edit it' }
+          format.json { head :no_content }
+        end
+      end
+end
 
   # POST /properties or /properties.json
   def create
     @property = Property.new(property_params)
+    @property.user_id = current_user.id
 
     respond_to do |format|
       if @property.save
@@ -36,11 +45,19 @@ class PropertiesController < ApplicationController
 
   # DELETE /properties/1 or /properties/1.json
   def destroy
-    @property.destroy
+    @user = current_user
+    if @property.user_id == @user.id
+      @property.destroy
 
-    respond_to do |format|
-      format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to properties_url, notice: 'Only the property owner can delete it' }
+        format.json { head :no_content }
+      end
     end
   end
 
