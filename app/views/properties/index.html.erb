@@ -22,13 +22,20 @@
   </div>
 
   <% if @properties.length < 50 %>
+
+  <!-- only user can add a new property -->
+  <% if can? :create, Property %>
   <button
     class="font-bold text-center self-center underline underline-offset-8 pb-5"
   >
-  <!-- only user can add a new property -->
-    <%= link_to "Add a new property", new_property_path if can? :create, Property %>
+    <%= link_to "Add a new property", new_property_path %>
   </button>
   <% else %>
+  <p class="text-sm bg-green-50 text-center pb-5">
+    Please Sign-in or Sign-up to be able to add your property for rentals and to
+    be able to book a property
+  </p>
+  <% end %> <% else %>
   <h5 class="text-center">
     The number of properties is limited to <strong>50</strong>
   </h5>
