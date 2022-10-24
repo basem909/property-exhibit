@@ -34,7 +34,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-
   # DELETE /properties/1 or /properties/1.json
   def destroy
     @property.destroy
