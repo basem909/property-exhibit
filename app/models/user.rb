@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
-  ROLES = ["admin", "user"]
+  ROLES = %w[admin user].freeze
   def is?(requested_role)
     role == requested_role.to_s
   end
