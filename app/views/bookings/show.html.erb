@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<div class="h-auto w-full flex flex-col pt-[70px] items-center ">
+  <div class="w-4/6 p-4 rounded-lg bg-white"><%= render @booking %>
+ <div class="px-2"> 
+   <label class="text-md font-semibold ">Property: </label>
+  <p>
+   <%= Property.find_by(id:@booking.property_id).name %> 
+  </p>
+  <label class="text-md font-semibold ">Located at: </label>
+  <p>
+     <%= Property.find_by(id:@booking.property_id).address %>
+  </p>
+  <label class="text-md font-semibold ">Any further info or notices will be directed to: </label>
+  <p>
+    <%=
+    User.find_by(id: current_user.id).email %>
+  </p>
+</div>
+<div class="link flex flex-col md:flex-row justify-around items-center py-4 ">
+    <%= link_to "Back to bookings", property_bookings_path, class:" pt-2 h-10 px-5 m-2 text-blue-100 transition-colors duration-150 bg-blue-600 rounded-lg focus:shadow-outline hover:bg-blue-700"  %> 
+    <%= button_to "Cancel this booking", property_booking_url(property_id:@booking.property_id, id: @booking.id), method: :delete, class: 'h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800' %>
+  </div>
+</div>
+  
+</div>
+

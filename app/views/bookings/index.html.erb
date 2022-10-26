@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+<div class="pt-[80px] flex flex-col ">
+  <h1 class="text-center text-xl">
+    You have <strong><%= @bookings.length%></strong> bookings
+  </h1>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-3 auto-rows-auto items-center w-full px-3"
+  >
+    <% @bookings.each do |booking| %>
+    <div
+      id="bookings"
+      class="w-full h-full overflow-hidden rounded-lg shadow-lg p-5 flex flex-col justify-between bg-white"
+    >
+      <%= render booking %>
+      <a>
+        <%= link_to "Show this booking", property_booking_path(id: booking.id, property_id: booking.property_id),
+        class: "w-full h-12 py-3 text-white text-center transition-colors
+        duration-150 bg-black rounded-full focus:shadow-outline
+        hover:bg-gray-800 cursor-pointer" %>
+      </a>
+    </div>
+    <% end %>
+  </div>
+  <div class="flex flex-col md:flex-row justify-center gap-3">
+    <a
+      ><%= link_to "Back to properties", properties_path, class: "font-bold
+      text-center self-center underline underline-offset-8 pb-5" %></a
+    >
+  </div>
+</div>
